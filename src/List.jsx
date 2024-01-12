@@ -10,7 +10,7 @@ function List({ todo }) {
   useEffect(() => {
     const listGroupItem = document.getElementById(`listItem-${todo.id}`);
     if (listGroupItem) {
-      listGroupItem.style.backgroundColor = check ? "green" : "white";
+      listGroupItem.style.backgroundColor = check ? "#C8FFE0" : "white";
     }
   }, [check, todo.id]);
 
@@ -25,7 +25,7 @@ function List({ todo }) {
         className="align-items-center  "
       >
         <div className="d-flex justify-content-between  ">
-          <div className="d-flex align-items-center ">
+          <div className="d-flex align-items-center justify-content-center  ">
             <Form>
               <Form.Check
                 type="checkbox"
@@ -33,7 +33,7 @@ function List({ todo }) {
                 onChange={() => setCheck(!check)}
               />
             </Form>
-            <p>{todo.text}</p>
+            <p className="ms-2  mt-3 ">{todo.text}</p>
           </div>
           <button className="btn btn-danger" onClick={handleRemove}>
             Remove
